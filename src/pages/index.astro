@@ -33,8 +33,8 @@ const projects = (await getCollection("projects"))
     .slice(0, 3);
 
 const stats = [
-    { label: "Membros ativos", value: "—" },
-    { label: "Anos de história", value: "—" },
+    { label: "Associados", value: "15" },
+    { label: "Anos de história", value: "15" },
     { label: "Projetos realizados", value: "—" },
     { label: "Distrito", value: "4590" },
 ];
@@ -84,12 +84,14 @@ const aboutCards = [
                     alt=""
                     width={pandaHero.width}
                     height={pandaHero.height}
-                    class="absolute inset-0 w-full h-full object-cover object-right will-change-[filter,transform]"
+                    class="absolute inset-0 w-full h-full object-cover object-center sm:object-right will-change-[filter,transform]"
                     style="transform: scale(1.06); transform-origin: center right;"
                 />
-                <!-- Esquerda → direita: fundo para o texto (triângulo vertical) -->
+                <!-- Mobile: overlay bem suave -->
+                <div class="absolute inset-0 bg-base-100/30 sm:hidden"></div>
+                <!-- Desktop: Esquerda → direita: fundo para o texto (triângulo vertical) -->
                 <div
-                    class="absolute inset-0 bg-linear-to-r from-base-100/95 from-10% via-base-100/55 via-52% to-transparent to-72%"
+                    class="hidden sm:block absolute inset-0 bg-linear-to-r from-base-100/95 from-10% via-base-100/55 via-52% to-transparent to-72%"
                 >
                 </div>
                 <!-- Baixo → cima: transição suave saindo da seção -->
