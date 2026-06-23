@@ -1,0 +1,398 @@
+---
+import { Icon } from "astro-icon/components";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE } from "../consts";
+
+const focusAreas = [
+    { icon: "lucide:shield", label: "Paz e prevenção de conflitos" },
+    { icon: "lucide:heart-pulse", label: "Prevenção e tratamento de doenças" },
+    { icon: "lucide:droplets", label: "Água, saneamento e higiene" },
+    { icon: "lucide:baby", label: "Saúde materno-infantil" },
+    { icon: "lucide:book-open", label: "Educação básica e alfabetização" },
+    {
+        icon: "lucide:landmark",
+        label: "Desenvolvimento econômico e comunitário",
+    },
+    { icon: "lucide:leaf", label: "Apoio ao meio ambiente" },
+];
+
+const timeline = [
+    {
+        year: "1968",
+        title: "Fundação mundial",
+        desc: "O Rotaract nasce em 13 de março, pelo Rotary Club Charlotte North em Charlotte, Carolina do Norte, EUA.",
+    },
+    {
+        year: "1968",
+        title: "Chegada ao Brasil",
+        desc: "O primeiro clube brasileiro, o Rotaract Club de Ribeirão Pires (SP), é fundado em 20 de novembro — meses após o surgimento do movimento.",
+    },
+    {
+        year: "1991",
+        title: "OMIR",
+        desc: "Rotaractianos brasileiros criam a Organização Multidistrital de Informação de Rotaract Clubs do Brasil, referência internacional.",
+    },
+    {
+        year: "2020",
+        title: "Membros plenos",
+        desc: "Os Rotaract Clubs passam a integrar o Rotary International como membros plenos, após aprovação no Conselho de Legislação de 2019.",
+    },
+];
+
+const projects = [
+    {
+        name: "Lanchinhos da Paz",
+        desc: "Distribuição gratuita de lanches a pacientes e acompanhantes na oncologia do Hospital Municipal Dr. Tabajara Ramos — entre 100 e 200 pessoas por edição.",
+        icon: "lucide:sandwich",
+        href: "/projetos/lanchinhos-da-paz",
+    },
+    {
+        name: "Acelera Poderoso",
+        desc: "Ação distrital de arrecadação de alimentos com mais de 350 kg doados ao Restaurante Solidário de Mogi Guaçu.",
+        icon: "lucide:shopping-bag",
+        href: "/projetos/acelera-poderoso",
+    },
+    {
+        name: "Sabacão",
+        desc: "Passeios voluntários com cães acolhidos pela ONG KAPA, promovendo bem-estar animal e apoiando a rotina da instituição.",
+        icon: "lucide:paw-print",
+        href: "/projetos/sabacao",
+    },
+    {
+        name: "Bazar Pandoar",
+        desc: "Bazar solidário de roupas doadas para arrecadar fundos para ações do clube, promovendo consumo consciente.",
+        icon: "lucide:shirt",
+        href: "/projetos/bazar-pandoar",
+    },
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <BaseHead
+            title={`Sobre — ${SITE_TITLE}`}
+            description="Saiba mais sobre a história do Rotaract e o que fazemos em Mogi Guaçu."
+        />
+    </head>
+    <body class="bg-base-100 text-base-content overflow-x-hidden">
+        <Header />
+
+        <!-- ─── HERO ──────────────────────────────────────────────── -->
+        <section class="relative pt-32 pb-24 px-6 overflow-hidden">
+            <div
+                class="absolute inset-0 hero-grid opacity-30 pointer-events-none"
+            >
+            </div>
+            <div
+                class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-rotaract-cranberry rounded-full blur-3xl opacity-[0.06] pointer-events-none"
+            >
+            </div>
+
+            <div class="max-w-7xl mx-auto" data-fade>
+                <span
+                    class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-rotaract-cranberry mb-6"
+                >
+                    <span class="w-6 h-px bg-rotaract-cranberry"></span>
+                    Fundado em 1968 · Presente em +160 países
+                </span>
+                <h1
+                    class="text-5xl sm:text-7xl font-black leading-[0.92] tracking-tight mb-6"
+                >
+                    Quem somos<br />e o que nos<br /><em
+                        class="not-italic text-rotaract-cranberry">move</em
+                    >
+                </h1>
+                <p
+                    class="text-xl text-base-content/60 max-w-xl leading-relaxed"
+                >
+                    Conheça a história, os valores e as áreas de atuação do
+                    Rotaract — o movimento de jovens líderes vinculado ao
+                    Rotary International desde <strong
+                        class="text-base-content/80">1968</strong
+                    >.
+                </p>
+            </div>
+        </section>
+
+        <!-- ─── O QUE É ───────────────────────────────────────────── -->
+        <section class="py-24 px-6 bg-base-200">
+            <div
+                class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center"
+            >
+                <div data-fade>
+                    <span
+                        class="text-xs font-bold tracking-widest uppercase text-rotaract-cranberry"
+                        >O que é o Rotaract</span
+                    >
+                    <h2
+                        class="text-4xl sm:text-5xl font-black mt-4 mb-6 leading-tight"
+                    >
+                        Rotary<br /><span class="text-rotaract-cranberry"
+                            >em Ação</span
+                        >
+                    </h2>
+                    <p
+                        class="text-base-content/70 text-lg leading-relaxed mb-6"
+                    >
+                        O Rotaract Club é vinculado ao Rotary International e
+                        aberto a jovens a partir de 18 anos. O nome é uma
+                        contração de <em>Rotary in Action</em>.
+                    </p>
+                    <p class="text-base-content/70 leading-relaxed">
+                        Desde julho de 2020, após aprovação no Conselho de
+                        Legislação de 2019, os Rotaract Clubs passaram a
+                        integrar o Rotary International como <strong
+                            class="text-base-content/90">membros plenos</strong
+                        >, reforçando o reconhecimento do papel dos jovens na
+                        organização.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4" data-fade>
+                    <div
+                        class="col-span-2 bg-rotaract-cranberry rounded-3xl p-8 text-white"
+                    >
+                        <p class="text-6xl font-black mb-2">
+                            700<span class="text-3xl">+</span>
+                        </p>
+                        <p class="text-white/70 font-medium">
+                            clubes no Brasil
+                        </p>
+                    </div>
+                    <div
+                        class="bg-base-100 rounded-3xl p-6 border border-base-300"
+                    >
+                        <p
+                            class="text-4xl font-black text-rotaract-cranberry mb-1"
+                        >
+                            10k
+                        </p>
+                        <p class="text-sm text-base-content/60">
+                            rotaractianos no Brasil
+                        </p>
+                    </div>
+                    <div
+                        class="bg-base-100 rounded-3xl p-6 border border-base-300"
+                    >
+                        <p
+                            class="text-4xl font-black text-rotaract-cranberry mb-1"
+                        >
+                            4590
+                        </p>
+                        <p class="text-sm text-base-content/60">
+                            nosso distrito
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── MISSÃO E VALORES ──────────────────────────────────── -->
+        <section class="py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16" data-fade>
+                    <span
+                        class="text-xs font-bold tracking-widest uppercase text-rotaract-cranberry"
+                        >Missão e valores</span
+                    >
+                    <h2 class="text-4xl sm:text-5xl font-black mt-4 mb-6">
+                        7 Áreas de Enfoque
+                    </h2>
+                    <p
+                        class="text-base-content/60 max-w-xl mx-auto text-lg leading-relaxed"
+                    >
+                        Todo projeto do Rotary é orientado por uma dessas áreas.
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {
+                        focusAreas.map((area, i) => (
+                            <div
+                                class:list={[
+                                    "rounded-2xl p-6 border border-base-300 hover:border-rotaract-cranberry/30 transition-colors",
+                                    i === 0
+                                        ? "lg:col-span-2 bg-rotaract-cranberry/5"
+                                        : "bg-base-200",
+                                ]}
+                                data-fade
+                            >
+                                <div class="w-10 h-10 rounded-xl bg-rotaract-cranberry/10 flex items-center justify-center mb-4">
+                                    <Icon
+                                        name={area.icon}
+                                        class="w-5 h-5 text-rotaract-cranberry"
+                                    />
+                                </div>
+                                <p class="font-semibold text-sm">
+                                    {area.label}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── LINHA DO TEMPO ────────────────────────────────────── -->
+        <section class="py-24 px-6 bg-base-200">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-16" data-fade>
+                    <span
+                        class="text-xs font-bold tracking-widest uppercase text-rotaract-cranberry"
+                        >Nossa trajetória</span
+                    >
+                    <h2 class="text-4xl sm:text-5xl font-black mt-4">
+                        História
+                    </h2>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="absolute left-16 top-0 bottom-0 w-px bg-base-300 hidden sm:block"
+                    >
+                    </div>
+
+                    <div class="space-y-10">
+                        {
+                            timeline.map((item) => (
+                                <div class="flex gap-8 items-start" data-fade>
+                                    <div class="flex-shrink-0 w-16 text-right hidden sm:block">
+                                        <span class="text-2xl font-black text-rotaract-cranberry">
+                                            {item.year}
+                                        </span>
+                                    </div>
+                                    <div class="flex-shrink-0 w-px hidden sm:block">
+                                        <div class="w-3 h-3 rounded-full bg-rotaract-cranberry border-2 border-base-200 mt-2 -ml-1.5" />
+                                    </div>
+                                    <div class="bg-base-100 rounded-2xl p-6 border border-base-300 flex-1">
+                                        <span class="text-sm font-black text-rotaract-cranberry sm:hidden">
+                                            {item.year} —{" "}
+                                        </span>
+                                        <h3 class="font-black text-lg mb-2 inline sm:block">
+                                            {item.title}
+                                        </h3>
+                                        <p class="text-base-content/60 text-sm leading-relaxed mt-2">
+                                            {item.desc}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── PROJETOS EM MOGI GUAÇU ───────────────────────────── -->
+        <section class="py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-end justify-between mb-16" data-fade>
+                    <div>
+                        <span
+                            class="text-xs font-bold tracking-widest uppercase text-rotaract-cranberry"
+                            >O que fazemos aqui</span
+                        >
+                        <h2 class="text-4xl sm:text-5xl font-black mt-4">
+                            Mogi Guaçu
+                        </h2>
+                    </div>
+                    <a
+                        href="/projetos"
+                        class="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-base-content/40 hover:text-rotaract-cranberry transition-colors"
+                    >
+                        Ver todos <Icon
+                            name="lucide:arrow-right"
+                            class="w-4 h-4"
+                        />
+                    </a>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    {
+                        projects.map((project) => (
+                            <a
+                                href={project.href}
+                                class="group bg-base-200 rounded-3xl p-8 border border-base-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                                data-fade
+                            >
+                                <div class="w-12 h-12 rounded-2xl bg-rotaract-cranberry/10 flex items-center justify-center mb-6">
+                                    <Icon
+                                        name={project.icon}
+                                        class="w-6 h-6 text-rotaract-cranberry"
+                                    />
+                                </div>
+                                <h3 class="text-xl font-black mb-3 group-hover:text-rotaract-cranberry transition-colors">
+                                    {project.name}
+                                </h3>
+                                <p class="text-base-content/60 leading-relaxed text-sm">
+                                    {project.desc}
+                                </p>
+                                <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-rotaract-cranberry mt-5 group-hover:gap-2.5 transition-all">
+                                    Saiba mais{" "}
+                                    <Icon
+                                        name="lucide:arrow-right"
+                                        class="w-3.5 h-3.5"
+                                    />
+                                </span>
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CTA ───────────────────────────────────────────────── -->
+        <section class="px-6 pb-16" data-fade>
+            <div class="max-w-7xl mx-auto">
+                <div
+                    class="bg-rotaract-cranberry rounded-3xl px-8 py-24 text-center text-white relative overflow-hidden"
+                >
+                    <div
+                        class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none"
+                    >
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/3 pointer-events-none"
+                    >
+                    </div>
+                    <div class="relative max-w-2xl mx-auto">
+                        <h2 class="text-4xl sm:text-5xl font-black mb-4">
+                            Faça parte do movimento.
+                        </h2>
+                        <p class="text-white/70 text-lg mb-10 leading-relaxed">
+                            Se você tem 18 anos ou mais e quer fazer a diferença
+                            na sua comunidade, venha conhecer o Rotaract Club de
+                            Mogi Guaçu.
+                        </p>
+                        <a
+                            href="https://www.instagram.com/rotaractmguacu/"
+                            target="_blank"
+                            rel="noopener"
+                            class="inline-flex items-center gap-2 bg-white text-rotaract-cranberry font-bold px-8 py-4 rounded-full hover:scale-105 transition-transform"
+                        >
+                            Entre em contato
+                            <Icon name="lucide:instagram" class="w-4 h-4" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <Footer />
+    </body>
+</html>
+
+<script>
+    import { animate, inView } from "motion";
+
+    inView("[data-fade]", ({ target }) => {
+        animate(
+            target,
+            { opacity: [0, 1], y: [40, 0] },
+            { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+        );
+    });
+</script>
