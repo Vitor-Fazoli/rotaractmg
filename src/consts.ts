@@ -1,2 +1,3 @@
-export const SITE_TITLE = "Rotaract MG";
-export const SITE_DESCRIPTION = "Site oficial do Rotaract Club de Minas Gerais.";
+export const SITE_TITLE = "Rotaract Club de Mogi Guaçu";
+export const SITE_DESCRIPTION =
+  "Site oficial do Rotaract Club de Mogi Guaçu - Distrito 4590";
