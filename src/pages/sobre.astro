@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import { getCollection } from "astro:content";
 import { SITE_TITLE } from "../consts";
 
 const focusAreas = [
@@ -41,32 +42,16 @@ const timeline = [
     },
 ];
 
-const projects = [
-    {
-        name: "Lanchinhos da Paz",
-        desc: "Distribuição gratuita de lanches a pacientes e acompanhantes na oncologia do Hospital Municipal Dr. Tabajara Ramos — entre 100 e 200 pessoas por edição.",
-        icon: "lucide:sandwich",
-        href: "/projetos/lanchinhos-da-paz",
-    },
-    {
-        name: "Acelera Poderoso",
-        desc: "Ação distrital de arrecadação de alimentos com mais de 350 kg doados ao Restaurante Solidário de Mogi Guaçu.",
-        icon: "lucide:shopping-bag",
-        href: "/projetos/acelera-poderoso",
-    },
-    {
-        name: "Sabacão",
-        desc: "Passeios voluntários com cães acolhidos pela ONG KAPA, promovendo bem-estar animal e apoiando a rotina da instituição.",
-        icon: "lucide:paw-print",
-        href: "/projetos/sabacao",
-    },
-    {
-        name: "Bazar Pandoar",
-        desc: "Bazar solidário de roupas doadas para arrecadar fundos para ações do clube, promovendo consumo consciente.",
-        icon: "lucide:shirt",
-        href: "/projetos/bazar-pandoar",
-    },
-];
+const allProjects = await getCollection("projects");
+const projects = allProjects
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    .slice(0, 4)
+    .map((p) => ({
+        name: p.data.title,
+        desc: p.data.description,
+        icon: p.data.icon ?? "lucide:star",
+        href: `/projetos/${p.id}`,
+    }));
 ---
 
 <!doctype html>
@@ -87,7 +72,7 @@ const projects = [
             >
             </div>
             <div
-                class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-rotaract-cranberry rounded-full blur-3xl opacity-[0.06] pointer-events-none"
+                class="absolute top-0 right-0 w-160 h-160 bg-rotaract-cranberry rounded-full blur-3xl opacity-[0.06] pointer-events-none"
             >
             </div>
 
@@ -109,9 +94,9 @@ const projects = [
                     class="text-xl text-base-content/60 max-w-xl leading-relaxed"
                 >
                     Conheça a história, os valores e as áreas de atuação do
-                    Rotaract — o movimento de jovens líderes vinculado ao
-                    Rotary International desde <strong
-                        class="text-base-content/80">1968</strong
+                    Rotaract — o movimento de jovens líderes vinculado ao Rotary
+                    International desde <strong class="text-base-content/80"
+                        >1968</strong
                     >.
                 </p>
             </div>
@@ -259,12 +244,12 @@ const projects = [
                         {
                             timeline.map((item) => (
                                 <div class="flex gap-8 items-start" data-fade>
-                                    <div class="flex-shrink-0 w-16 text-right hidden sm:block">
+                                    <div class="shrink-0 w-16 text-right hidden sm:block">
                                         <span class="text-2xl font-black text-rotaract-cranberry">
                                             {item.year}
                                         </span>
                                     </div>
-                                    <div class="flex-shrink-0 w-px hidden sm:block">
+                                    <div class="shrink-0 w-px hidden sm:block">
                                         <div class="w-3 h-3 rounded-full bg-rotaract-cranberry border-2 border-base-200 mt-2 -ml-1.5" />
                                     </div>
                                     <div class="bg-base-100 rounded-2xl p-6 border border-base-300 flex-1">
@@ -388,7 +373,7 @@ const projects = [
 <script>
     import { animate, inView } from "motion";
 
-    inView("[data-fade]", ({ target }) => {
+    inView("[data-fade]", ({ target }): void => {
         animate(
             target,
             { opacity: [0, 1], y: [40, 0] },

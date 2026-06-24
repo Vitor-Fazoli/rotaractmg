@@ -3,6 +3,7 @@ title: 'Sabacão'
 description: 'Passeios voluntários com cães acolhidos pela ONG KAPA, apoiando o bem-estar animal e a rotina de limpeza da instituição.'
 pubDate: 'Jul 27 2024'
 category: 'Comunitários'
+icon: 'lucide:paw-print'
 status: 'concluído'
 ---
 

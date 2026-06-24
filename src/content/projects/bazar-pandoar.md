@@ -3,6 +3,7 @@ title: 'Bazar Pandoar'
 description: 'Bazar solidário de roupas doadas para arrecadar fundos para ações sociais, promovendo consumo consciente e reutilização.'
 pubDate: 'Sep 21 2025'
 category: 'Captação de Recursos'
+icon: 'lucide:shirt'
 status: 'concluído'
 ---
 

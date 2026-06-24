@@ -22,9 +22,13 @@
     }
 
     body {
-        font-family: var(--font-atkinson), sans-serif;
+        font-family: var(--font-inter), Arial, sans-serif;
         word-wrap: break-word;
         overflow-wrap: break-word;
+    }
+
+    h1, h2, h3, h4, h5, h6, nav, button, label, .btn {
+        font-family: var(--font-open-sans), Arial, sans-serif;
     }
 
     /* Prose typography for blog/markdown content */

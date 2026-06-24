@@ -3,6 +3,7 @@ title: 'Acelera Poderoso'
 description: 'Ação distrital de arrecadação de alimentos realizada no Mercado Kamel e no Studio Flash, com destino ao Restaurante Solidário de Mogi Guaçu.'
 pubDate: 'Nov 08 2025'
 category: 'Comunitários'
+icon: 'lucide:shopping-bag'
 status: 'concluído'
 ---
 

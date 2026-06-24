@@ -25,6 +25,7 @@ const projects = defineCollection({
 			description: z.string(),
 			pubDate: z.coerce.date(),
 			category: z.string(),
+			icon: z.string().optional(),
 			heroImage: z.optional(image()),
 			status: z.enum(['ativo', 'concluído']).default('concluído'),
 		}),

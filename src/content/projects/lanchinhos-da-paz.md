@@ -3,6 +3,7 @@ title: 'Lanchinhos da Paz'
 description: 'Distribuição gratuita de lanches a pacientes e acompanhantes na ala de oncologia do Hospital Municipal Dr. Tabajara Ramos.'
 pubDate: 'Aug 26 2024'
 category: 'Comunitários'
+icon: 'lucide:sandwich'
 status: 'concluído'
 ---
 
