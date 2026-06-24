@@ -1,0 +1,330 @@
+---
+import { Icon } from "astro-icon/components";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE } from "../consts";
+
+const requirements = [
+    {
+        icon: "lucide:calendar-days",
+        title: "Idade",
+        desc: "Ter 18 anos ou mais. Sem limite de idade superior — todos são bem-vindos.",
+    },
+    {
+        icon: "lucide:map-pin",
+        title: "Localização",
+        desc: "Morar ou trabalhar em Mogi Guaçu ou região.",
+    },
+    {
+        icon: "lucide:heart-handshake",
+        title: "Vontade de servir",
+        desc: "Querer contribuir com a comunidade e crescer junto com outros jovens líderes.",
+    },
+];
+
+const steps = [
+    {
+        num: "01",
+        title: "Entre em contato",
+        desc: "Mande uma mensagem pelo Instagram ou WhatsApp do clube. Vamos marcar um papo!",
+    },
+    {
+        num: "02",
+        title: "Participe como convidado",
+        desc: "É necessário participar de pelo menos uma reunião e de um projeto como convidado — para você sentir na prática como o clube funciona.",
+    },
+    {
+        num: "03",
+        title: "Manifeste seu interesse",
+        desc: "Após participar de uma reunião e de um projeto, fale com um dos membros para demonstrar que quer fazer parte do clube.",
+    },
+    {
+        num: "04",
+        title: "Seja rotaractiano",
+        desc: "Após aprovação, você passa a fazer parte de uma rede que conecta jovens líderes em mais de 160 países.",
+    },
+];
+
+const benefits = [
+    {
+        icon: "lucide:users",
+        title: "Rede de contatos",
+        desc: "Conecte-se com jovens profissionais e líderes da sua cidade e do Brasil inteiro.",
+    },
+    {
+        icon: "lucide:trending-up",
+        title: "Desenvolvimento pessoal",
+        desc: "Palestras, workshops e projetos que desenvolvem habilidades de liderança e gestão.",
+    },
+    {
+        icon: "lucide:globe",
+        title: "Impacto real",
+        desc: "Participe de projetos que transformam comunidades e deixam um legado concreto.",
+    },
+    {
+        icon: "lucide:briefcase",
+        title: "Experiência profissional",
+        desc: "Gerencie projetos, equipes e recursos — experiências que contam no currículo.",
+    },
+    {
+        icon: "lucide:award",
+        title: "Reconhecimento",
+        desc: "Faça parte de uma organização reconhecida globalmente há mais de 50 anos.",
+    },
+    {
+        icon: "lucide:plane",
+        title: "Eventos nacionais",
+        desc: "Participe de assembleias, congressos e eventos do Rotaract em todo o Brasil.",
+    },
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <BaseHead
+            title={`Junte-se — ${SITE_TITLE}`}
+            description="Saiba como fazer parte do Rotaract Club de Mogi Guaçu e transformar sua comunidade."
+        />
+    </head>
+    <body class="bg-base-100 text-base-content overflow-x-hidden">
+        <Header />
+
+        <!-- ─── HERO ──────────────────────────────────────────────── -->
+        <section class="relative pt-32 pb-24 px-6 overflow-hidden">
+            <div
+                class="absolute inset-0 hero-grid opacity-30 pointer-events-none"
+            >
+            </div>
+            <div
+                class="absolute top-0 left-1/2 w-[40rem] h-[40rem] bg-rotaract-cranberry rounded-full blur-3xl opacity-[0.06] pointer-events-none"
+            >
+            </div>
+
+            <div class="max-w-7xl mx-auto" data-fade>
+                <span
+                    class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-rotaract-cranberry mb-6"
+                >
+                    <span class="w-6 h-px bg-rotaract-cranberry"></span>
+                    Distrito 4590 · Mogi Guaçu
+                </span>
+                <h1
+                    class="text-5xl sm:text-7xl font-black leading-[0.92] tracking-tight mb-6"
+                >
+                    Faça parte<br />do<br /><em
+                        class="not-italic text-rotaract-cranberry"
+                        >movimento.</em
+                    >
+                </h1>
+                <p class="text-xl text-base-content/60 max-w-xl leading-relaxed mb-10">
+                    O Rotaract é mais do que um clube — é uma comunidade de
+                    jovens que acreditam que <strong
+                        class="text-base-content/80">servir</strong
+                    > é a melhor forma de crescer.
+                </p>
+                <a
+                    href="https://www.instagram.com/rotaractmguacu/"
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-flex items-center gap-2 bg-rotaract-cranberry text-white font-semibold px-8 py-4 rounded-full hover:opacity-90 transition-opacity"
+                >
+                    Falar com o clube
+                    <Icon name="lucide:instagram" class="w-4 h-4" />
+                </a>
+            </div>
+        </section>
+
+        <!-- ─── REQUISITOS ────────────────────────────────────────── -->
+        <section class="py-24 px-6 bg-base-200">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16" data-fade>
+                    <span
+                        class="text-xs font-bold tracking-widest uppercase text-rotaract-cranberry"
+                        >Quem pode entrar</span
+                    >
+                    <h2 class="text-4xl sm:text-5xl font-black mt-4">
+                        Requisitos
+                    </h2>
+                    <p
+                        class="text-base-content/60 max-w-lg mx-auto text-lg leading-relaxed mt-4"
+                    >
+                        O Rotaract é aberto a qualquer pessoa que queira fazer a
+                        diferença. São poucos os requisitos.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    {
+                        requirements.map((req) => (
+                            <div
+                                class="bg-base-100 rounded-3xl p-8 border border-base-300 hover:border-rotaract-cranberry/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                                data-fade
+                            >
+                                <div class="w-12 h-12 rounded-2xl bg-rotaract-cranberry/10 flex items-center justify-center mb-6">
+                                    <Icon
+                                        name={req.icon}
+                                        class="w-6 h-6 text-rotaract-cranberry"
+                                    />
+                                </div>
+                                <h3 class="text-xl font-black mb-3">
+                                    {req.title}
+                                </h3>
+                                <p class="text-base-content/60 leading-relaxed">
+                                    {req.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── PASSOS ────────────────────────────────────────────── -->
+        <section class="py-24 px-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-16" data-fade>
+                    <span
+                        class="text-xs font-bold tracking-widest uppercase text-rotaract-cranberry"
+                        >Como funciona</span
+                    >
+                    <h2 class="text-4xl sm:text-5xl font-black mt-4">
+                        4 passos para entrar
+                    </h2>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="absolute left-10 top-0 bottom-0 w-px bg-base-300 hidden sm:block"
+                    >
+                    </div>
+
+                    <div class="space-y-8">
+                        {
+                            steps.map((step) => (
+                                <div
+                                    class="flex gap-8 items-start"
+                                    data-fade
+                                >
+                                    <div class="flex-shrink-0 w-10 text-right hidden sm:block">
+                                        <span class="text-2xl font-black text-rotaract-cranberry/30">
+                                            {step.num}
+                                        </span>
+                                    </div>
+                                    <div class="flex-shrink-0 hidden sm:block">
+                                        <div class="w-4 h-4 rounded-full bg-rotaract-cranberry border-4 border-base-100 mt-2 -ml-2 shadow" />
+                                    </div>
+                                    <div class="bg-base-200 rounded-2xl p-6 border border-base-300 flex-1">
+                                        <span class="text-sm font-black text-rotaract-cranberry sm:hidden">
+                                            {step.num} —{" "}
+                                        </span>
+                                        <h3 class="font-black text-lg mb-2 inline sm:block">
+                                            {step.title}
+                                        </h3>
+                                        <p class="text-base-content/60 text-sm leading-relaxed mt-2">
+                                            {step.desc}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── BENEFÍCIOS ────────────────────────────────────────── -->
+        <section class="py-24 px-6 bg-base-200">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16" data-fade>
+                    <span
+                        class="text-xs font-bold tracking-widest uppercase text-rotaract-cranberry"
+                        >O que você ganha</span
+                    >
+                    <h2 class="text-4xl sm:text-5xl font-black mt-4">
+                        Benefícios
+                    </h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {
+                        benefits.map((benefit, i) => (
+                            <div
+                                class:list={[
+                                    "rounded-2xl p-6 border border-base-300 hover:border-rotaract-cranberry/30 transition-colors",
+                                    i === 0
+                                        ? "bg-rotaract-cranberry/5"
+                                        : "bg-base-100",
+                                ]}
+                                data-fade
+                            >
+                                <div class="w-10 h-10 rounded-xl bg-rotaract-cranberry/10 flex items-center justify-center mb-4">
+                                    <Icon
+                                        name={benefit.icon}
+                                        class="w-5 h-5 text-rotaract-cranberry"
+                                    />
+                                </div>
+                                <h3 class="font-black text-base mb-2">
+                                    {benefit.title}
+                                </h3>
+                                <p class="text-sm text-base-content/60 leading-relaxed">
+                                    {benefit.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CTA ───────────────────────────────────────────────── -->
+        <section class="px-6 py-16" data-fade>
+            <div class="max-w-7xl mx-auto">
+                <div
+                    class="bg-rotaract-cranberry rounded-3xl px-8 py-24 text-center text-white relative overflow-hidden"
+                >
+                    <div
+                        class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none"
+                    >
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/3 pointer-events-none"
+                    >
+                    </div>
+                    <div class="relative max-w-2xl mx-auto">
+                        <h2 class="text-4xl sm:text-5xl font-black mb-4">
+                            Pronto para começar?
+                        </h2>
+                        <p class="text-white/70 text-lg mb-10 leading-relaxed">
+                            A próxima reunião pode mudar sua trajetória. Fale
+                            com a gente pelo Instagram e venha nos conhecer.
+                        </p>
+                        <a
+                            href="https://www.instagram.com/rotaractmguacu/"
+                            target="_blank"
+                            rel="noopener"
+                            class="inline-flex items-center gap-2 bg-white text-rotaract-cranberry font-bold px-8 py-4 rounded-full hover:scale-105 transition-transform"
+                        >
+                            Falar pelo Instagram
+                            <Icon name="lucide:instagram" class="w-4 h-4" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <Footer />
+    </body>
+</html>
+
+<script>
+    import { animate, inView } from "motion";
+
+    inView("[data-fade]", ({ target }) => {
+        animate(
+            target,
+            { opacity: [0, 1], y: [40, 0] },
+            { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+        );
+    });
+</script>
