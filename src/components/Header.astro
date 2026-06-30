@@ -2,12 +2,14 @@
 import { Icon } from "astro-icon/components";
 import logo from "../assets/rotaract_mguacu_logo.png";
 import Analytics from "@vercel/analytics/astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 ---
 
 <header
     id="site-header"
     class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
 >
+    <SpeedInsights />
     <Analytics />
     <div class="max-w-7xl mx-auto px-6">
         <nav class="flex items-center justify-between h-16">
